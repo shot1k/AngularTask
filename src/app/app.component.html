@@ -1,20 +1,54 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
+    <h2>Adcash test assigment</h2>
+    <p>Type tags here using comma, semicolon and line break as delimiters</p>
+    <div class="form-group">
+      <textarea class="form-control" rows="5" id="comment" [(ngModel)]="text"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="addTagFunction()">add tag</button><br><br>
 
+
+
+    <div class="border"  style="height: 100px; background-color: antiquewhite;">
+      <ul id="tags">
+        <li *ngFor="let item of tagArray1; let i = index" >
+            <button type="button" class="btn btn-outline-light"  aria-label="Close"
+                    [ngClass]="{
+                      'positive' : item > 0,
+                      'negative' : item < 0
+                       }"
+                    >{{item}}
+                <span aria-hidden="true" (click)="deleteText(i)">&times;</span> 
+              </button>
+        </li>
+      </ul>
+    </div>
+    <br>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="editTag()">edit tag</button>
+      
+        
+        <div class="modal" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+            
+              
+              <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              
+              
+              <div class="modal-body">
+                  <textarea class="form-control" rows="5" id="comment" [(ngModel)]="editingTags"></textarea>
+              </div>
+              
+              
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal" (click)="updateTag()">Save</button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+</div>

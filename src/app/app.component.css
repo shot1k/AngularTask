@@ -1,0 +1,11 @@
+ul#tags li {
+    display:inline;
+  }
+
+  .positive {
+    background-color: green;
+}
+
+.negative {
+    background-color: red;
+}
