@@ -15,7 +15,8 @@ export class AppComponent implements OnInit {
 
   addTagFunction(){
     console.log(this.text);
-    if(this.text == ''){
+    console.log("trim", this.text.trim());
+    if(!this.text.trim().length){
       return;
     }
     this.fillTagArray1ArrayFromString(this.text)
@@ -45,10 +46,10 @@ export class AppComponent implements OnInit {
   fillTagArray1ArrayFromString(text){
     console.log(this.editingTags);
     this.tagArray = [];
-    var tempTagarray = text.toString().split(' ').join(',').split(';').join(',').split(',');
+    var tempTagarray = text.toString().split(' ').join(',').split('\n').join(',').split(';').join(',').split(',');
     
     for(let i=0; i<tempTagarray.length; i++){
-      if(isNaN(tempTagarray[i]) == false){
+      if(!isNaN(tempTagarray[i])){
         console.log(tempTagarray[i]);
         this.tagArray.push(tempTagarray[i]);
       }

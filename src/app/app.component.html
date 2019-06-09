@@ -8,9 +8,9 @@
 
 
 
-    <div class="border"  style="height: 100px; background-color: antiquewhite;">
-      <ul id="tags">
-        <li *ngFor="let item of tagArray; let i = index" >
+    <div class="border"  style="min-height: 100px; background-color: antiquewhite;" >
+      <ul id="tags" >
+        <li *ngFor="let item of tagArray; let i = index;">
             <button type="button" class="btn btn-outline-light"  aria-label="Close"
                     [ngClass]="{
                       'positive' : item >= 0,
