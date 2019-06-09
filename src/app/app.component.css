@@ -2,6 +2,14 @@ ul#tags li {
     display:inline;
   }
 
+  ul{
+    margin-top: 25px;
+  }
+
+  li{
+    margin-bottom: 2px;
+  }
+
   .positive {
     background-color: green;
 }
